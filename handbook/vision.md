@@ -1,5 +1,12 @@
 # Vision
 
+## North star
+
+**The default trading plugin every AI agent reaches for.** When a developer tells Claude
+Code, Codex, or any agent "go trade / rebalance / check my positions," the tool it picks up
+is `multxt` — non-custodial, any-venue, on the user's own keys. Own that reflex and we own
+the category.
+
 ## The one-liner
 
 **One operable surface for every market — built for agents first.**
@@ -85,10 +92,17 @@ the place an ecosystem can actually form.
 
 ## What success looks like
 
+- **The reflex test:** ask any AI coding agent (Claude Code, Codex) to do anything with a
+  market and it installs/uses the multxt plugin by default — the way it reaches for `gh` or
+  `git`. That reflex is the category.
 - smxt becomes the obvious answer to "is there a ccxt for stocks?"
 - `mxt` is the command people reach for to do cross-venue ops without writing glue.
 - An agent can, via MCP, research → propose → (human confirms) → execute a trade on the
   user's own account, on any supported venue, with no custody handoff.
+
+Because the plugin is the funnel, we ship a **minimal plugin/MCP surface as early as the
+CLI does something real** (don't wait for full aggregation) — the sooner agents can install
+it, the sooner the distribution + community flywheel turns.
 
 ## Non-goals
 

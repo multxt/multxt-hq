@@ -64,11 +64,14 @@ ccxt, with `--json` and deterministic exit codes.
 | **1.3** ⛔(1.1,1.2) | Real `set-leverage` + `price-diff` | 1.1, 1.2 | Replace CLI stubs with real calls. **AC:** `mxt set-leverage <v> <sym> <x> --json` returns the venue response; `mxt price-diff a b sym --json` streams normalized spread; exit codes deterministic. |
 | **1.4** ⛔(1.1,1.2) | `positions` + `balances` | 1.1, 1.2 | `mxt positions --json`, `mxt balances --json` across all configured venues. **AC:** aggregated, normalized, sorted; empty state handled. |
 | **1.5** 🔨 | Error → exit-code map | — | Map the shared error hierarchy to stable exit codes (auth=printable, network=retryable). **AC:** documented table; `--json` includes `{ok,error,code}`. |
+| **1.6** ⛔(1.3,1.4) | **Minimal plugin/MCP (ship the funnel early)** | 1.3, 1.4, 4.1 | `mxt mcp serve` exposing the read-only + confirm-gated commands that already exist (`positions`, `balances`, `price-diff`, `set-leverage`) as MCP tools, packaged as a Claude Code / Codex plugin. **AC:** an agent installs it and reads positions; placing an order requires confirm. This is the **north-star surface** — don't wait for Phase 4 to ship a v0. |
 
-Parallel: 1.1, 1.2, 1.5 run concurrently; 1.3 + 1.4 fan out after.
+Parallel: 1.1, 1.2, 1.5 run concurrently; 1.3 + 1.4 fan out after; 1.6 last (pulls the guard model 4.1 forward).
 
 **Phase-1 acceptance:** against a paper/sandbox account, all five commands work end-to-end,
-`--json` everywhere, no secret ever logged.
+`--json` everywhere, no secret ever logged — **and a minimal plugin is installable by an AI
+agent.** Getting the plugin into agents' hands early is the whole GTM (see vision: the plugin
+is the funnel); Phase 4 then deepens it.
 
 ---
 
