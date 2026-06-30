@@ -1,0 +1,15 @@
+# deps & build (real artifacts live in submodules; keep hub clean)
+node_modules/
+dist/
+*.tsbuildinfo
+
+# secrets / local config — NEVER commit
+*.env
+.env*
+multxt.yaml
+*.key
+*.pem
+
+# os / editor
+.DS_Store
+*.log
