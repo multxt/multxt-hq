@@ -18,6 +18,21 @@ multxt-hq/         this repo — handbook + submodule pointers (no app code of i
 External members of the family — **ccxt** (crypto) and **pmxt** (prediction markets) —
 are *dependencies*, not submodules. We consume them; we don't vendor them.
 
+## The agent team (`.claude/agents/`)
+
+A dedicated dev crew lives here, modeled on plutous-io's team but lean for an OSS CLI library. These files are canonical; cheunhong's HQ symlinks them in (`hq/.claude/agents/multxt/`) so they're invokable from his operating center too.
+
+| Agent | Model | Role |
+|---|---|---|
+| **Lex** | opus | Lead / architect / orchestrator — owns the `-xt` contract, WP decomposition, PR-gate. **Entry point.** |
+| **Ash** | sonnet | smxt connector engineer — base Broker, per-broker connectors, `has` maps |
+| **Cole** | sonnet | multxt CLI + aggregation — Venue adapter, ops, CLI, MCP, guard model |
+| **Ren** | sonnet | QA + has-conformance — vitest/CI, the adversarial-verify gate |
+| **Vale** | sonnet | Docs + DevRel — handbook, connector/CLI docs, npm publish, multxt.dev |
+| **Jax** | opus | Adversarial reviewer — secrets hygiene, the `--yes` guard model, license/dep audit |
+
+Loop: Lex decomposes → Ash/Cole implement → Ren verifies → Lex integrates → Jax security-gates → Vale docs + publishes. Names carry a `(multxt)` tag in their frontmatter so they group cleanly when symlinked into a larger agent set.
+
 ## Read first
 
 1. [`handbook/vision.md`](./handbook/vision.md) — why this exists, the wedge, who it's for.
