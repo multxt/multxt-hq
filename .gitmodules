@@ -1,0 +1,6 @@
+[submodule "multxt"]
+	path = multxt
+	url = https://github.com/multxt/multxt.git
+[submodule "smxt"]
+	path = smxt
+	url = https://github.com/multxt/smxt.git
