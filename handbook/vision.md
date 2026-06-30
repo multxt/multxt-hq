@@ -45,6 +45,44 @@ Three shifts make this the right project at the right time:
   own exchange/broker accounts.
 - **The OSS community** around ccxt/pmxt who want the layers above and beside them.
 
+## The business — OSS → community → monetization
+
+This is the strategy, not an afterthought. multxt is a **developer go-to-market**: win
+mindshare with free, genuinely excellent open-source tooling, build a community around the
+`-xt` ecosystem, then monetize the layers that are painful to self-host.
+
+**1. Acquire dev mindshare (free, MIT).** ccxt is installed everywhere because it's free
+and unavoidable; pmxt is replaying that move in prediction markets. `smxt` claims the
+unclaimed "ccxt for stocks" slot, and `multxt` is the agent-native CLI that ties the family
+together. The libraries are the top of the funnel — the wider they spread, the bigger the
+addressable base. Distribution wins: npm, GitHub, the Claude plugin marketplace, the
+`-xt` brand.
+
+**2. Build community.** Contributors per connector (the ccxt model — the community maintains
+the long tail of venues), a Discord, good docs on `multxt.dev`, and the ecosystem framing
+("the `-xt` family") that makes people want to belong to it. Community = free maintenance,
+free distribution, free credibility, and a warm audience for everything paid.
+
+**3. Monetize the hard parts (open-core).** The free core stays free; revenue comes from
+what developers and traders will pay to *not* run themselves:
+- **Hosted / managed execution & data** — the paid, reliable, low-latency layer (ccxt's own
+  model: open core + paid Pro/websocket; pmxt's hosted API is the same move).
+- **Pro agent layer** — hosted MCP endpoint, multi-account dashboards, alerting, audit logs,
+  the convenient "research → confirm → execute" surface for non-CLI users.
+- **Strategy & connector marketplace** — take a cut of paid strategies/plugins built on the
+  protocol.
+- **Enterprise** — support, SLAs, private connectors, white-label for funds/desks.
+
+**Why this compounds toward the $10M goal:** the funnel is developers (cheap to reach, high
+intent), the moat is the ecosystem + community (hard to replicate), and the monetization is
+recurring and usage-scaled. It also feeds Plutous — the same connector layer and the same
+agent-execution rails are dual-use.
+
+**The wedge competitors can't copy:** non-custodial, bring-your-own-keys, any-venue. A
+custodial platform (Liquid's Co-Invest, etc.) can bolt on AI, but it will never route to its
+competitors' venues or let users keep their own keys. We start from the open, neutral layer —
+the place an ecosystem can actually form.
+
 ## What success looks like
 
 - smxt becomes the obvious answer to "is there a ccxt for stocks?"

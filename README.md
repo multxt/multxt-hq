@@ -49,6 +49,7 @@ multxt-hq/
 │   ├── vision.md        why multxt exists, the wedge
 │   ├── architecture.md  the -xt family, the layer model, the unified interface spec
 │   ├── roadmap.md       phased plan
+│   ├── build-scope.md   the implementation blueprint (subagent work packages)
 │   ├── naming.md        the -xt convention
 │   └── contributing.md  how to add a connector / op / command
 ├── multxt/            (submodule) aggregation layer + mxt CLI
